@@ -2,15 +2,14 @@
 require_once "../conn/conn.php";
 session_start();
 
-//try lang
-//for sanitizing the input of the user
+// For sanitizing the input of the user
 function sanitize($conn, $username, $password){
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $username = mysqli_real_escape_string($conn, $username);
+    $password = mysqli_real_escape_string($conn, $password);
     return $username && $password;
 }
 
-//for comparing if the user's input is the same at the database and let the user logged in if the same
+// For comparing if the user's input is the same at the database and let the user log in if the same
 function login($conn, $username, $password){
     $sanitized = sanitize($conn, $username, $password);
 
@@ -18,46 +17,46 @@ function login($conn, $username, $password){
         $query = "SELECT id, username, password, last_name, full_name FROM accounts WHERE username = '$username'";
         $result = mysqli_query($conn, $query);
 
-        //find the user's account
+        // Find the user's account
         if(mysqli_num_rows($result) > 0){
-
-            //this fetches the data of the user and put it the to the $row variable
+            // Fetch the data of the user and put it into the $row variable
             $row = mysqli_fetch_assoc($result);
 
-            //embedded the session to logged in user so it tracks the user
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['username'] = $row['username'];
+            // Verify the password
+            if (password_verify($password, $row['password'])) {
+                // Embed the session to the logged-in user to track the user
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['full_name'] = $row['full_name'];
 
-            //direct the user to the dashboard after logged-in
-            header("location: ../templates/dashboard.php");
+                // Redirect the user to the dashboard after logging in
+                header("location: ../templates/dashboard.php");
+                exit();
+            } else {
+                echo "Invalid Account";
+            }
+        } else {
+            echo "Invalid Account";
         }
-        else{
-            echo"Invalid Account";
-        }
-    }
-    else{
-        return false;
+    } else {
+        echo "Sanitization failed";
     }
 }
 
-//when the user pressed submit, this function will execute
-if(isset($_POST['submit'])){
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+// When the user presses submit, this function will execute
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
     login($conn, $username, $password);
 }
 
-
-//=============================================================================================//
-
-
-//validate if the user is still logged in
+// Validate if the user is still logged in
 function verify_login(){
     if (!isset($_SESSION["username"])) {
-
         // Redirect to login page if the user is not logged in
         header("location: ../../templates/login.php");
         exit();
     }
 }
+?>
