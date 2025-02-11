@@ -51,3 +51,13 @@ if(isset($_POST['submit'])){
 
 //=============================================================================================//
 
+
+//validate if the user is still logged in
+function verify_login(){
+    if (!isset($_SESSION["username"])) {
+
+        // Redirect to login page if the user is not logged in
+        header("location: ../login.php");
+        exit();
+    }
+}

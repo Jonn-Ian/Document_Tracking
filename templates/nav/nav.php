@@ -1,3 +1,7 @@
+<?php 
+require_once "../../authentication/val/val.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
