@@ -24,19 +24,22 @@
 // }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document KUNASD POASD</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/login.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
-    <form action="../authentication/val/val.php" method="post">
-        <input type="email" id="email" name="email" placeholder="email"><br>
-        <input type="password" id="password" name="password" placeholder="password"><br>
-        <input type="submit" value="login">
-    </form>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="../authentication/val/val.php" method="post">
+            <input type="email" id="email" name="email" placeholder="Email" required><br>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
 </body>
 </html>
