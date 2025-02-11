@@ -15,10 +15,20 @@ function login($conn, $username, $password){
     $sanitized = sanitize($conn, $username, $password);
 
     if($sanitized){
-        $query = "SELECT username, password, last_name, full_name FROM database WHERE username = '$username'";
+        $query = "SELECT id, username, password, last_name, full_name FROM database WHERE username = '$username'";
         $result = mysqli_query($conn, $query);
 
+        //find the user's account
         if(mysqli_num_rows($result) > 0){
+
+            //this fetches the data of the user and put it the to the $row variable
+            $row = mysqli_fetch_assoc($result);
+
+            //embedded the session to logged in user so it tracks the user
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+
+            //direct the user to the dashboard after logged-in
             header("location: ../templates/dashboard.php");
         }
         else{
@@ -30,7 +40,6 @@ function login($conn, $username, $password){
     }
 }
 
-
 //when the user pressed submit, this function will execute
 if(isset($_POST['submit'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -38,3 +47,7 @@ if(isset($_POST['submit'])){
 
     login($conn, $username, $password);
 }
+
+
+//=============================================================================================//
+

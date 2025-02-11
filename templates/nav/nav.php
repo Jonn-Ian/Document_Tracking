@@ -12,6 +12,7 @@
   <a href="#">Services</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>
+  <a href="#">Logout</a>
 </div>
 
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
