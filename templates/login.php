@@ -1,22 +1,27 @@
 <?php
-require_once "../authentication/conn/conn.php";
-session_start();
+// require_once "../authentication/conn/conn.php";
+// require_once "../authentication/val/val.php";
+// session_start();
 
-if(isset($_SESSION["username"])){
-    switch(isset($_SESSION["position"])){
-        case "super_admin":
-            header("location: ");
-            break;
-        case "admin":
-            header("location: ");
-            break;
-        case "employee":
-            header("location: ");
-            break;
-        default:
-            echo "<script>alert('Can't find the position');</script>";
-    }
-}
+// if(isset($_SESSION["submit"])){
+
+//     sanitize($conn, $username, $password);
+//     login($conn, $password, $username);
+
+//     switch(isset($_SESSION["position"])){
+//         case "super_admin":
+//             header("location: ");
+//             break;
+//         case "admin":
+//             header("location: ");
+//             break;
+//         case "employee":
+//             header("location: ");
+//             break;
+//         default:
+//             echo "Can't find the position";
+//     }
+// }
 
 
 ?>
