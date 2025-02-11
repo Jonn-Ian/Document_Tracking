@@ -1,12 +1,12 @@
 <?php
 
-$servername = "loclahost";
+$servername = "localhost";
 $username = "root";
-$password = "";
-$db_name = "";
+$serverpassword = "";
+$db_name = "docu_tracker";
 
 
-$conn = new mysqli($servername, $password, $db_name, $host);;
+$conn = new mysqli($servername, $serverpassword, $db_name, $username);;
 
 if (!$conn) {
     die('Failed to connect to MySQL: ' . mysqli_connect_error());

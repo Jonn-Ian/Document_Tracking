@@ -23,7 +23,7 @@ body {
     color: #333;
 }
 
-.login-box input[type="email"],
+.login-box input[type="text"],
 .login-box input[type="password"] {
     width: 90%;
     padding: 10px;

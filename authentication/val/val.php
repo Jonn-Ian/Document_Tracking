@@ -15,7 +15,7 @@ function login($conn, $username, $password){
     $sanitized = sanitize($conn, $username, $password);
 
     if($sanitized){
-        $query = "SELECT id, username, password, last_name, full_name FROM database WHERE username = '$username'";
+        $query = "SELECT id, username, password, last_name, full_name FROM accounts WHERE username = '$username'";
         $result = mysqli_query($conn, $query);
 
         //find the user's account

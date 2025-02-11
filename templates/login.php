@@ -36,7 +36,7 @@
     <div class="login-box">
         <h2>Login</h2>
         <form action="../authentication/val/val.php" method="post">
-            <input type="email" id="email" name="email" placeholder="Email" required><br>
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
             <input type="password" id="password" name="password" placeholder="Password" required><br>
             <input type="submit" value="Login">
         </form>
