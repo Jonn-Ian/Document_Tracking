@@ -2,7 +2,7 @@
 require_once "../conn/conn.php";
 session_start();
 
-
+//try lang
 //for sanitizing the input of the user
 function sanitize($conn, $username, $password){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
