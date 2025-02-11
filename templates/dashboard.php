@@ -1,14 +1,3 @@
-<?php
-/*session_start();
-
-// Check if the user is logged in
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
-}
-
-$username = $_SESSION['username'];*/
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,15 +8,16 @@ $username = $_SESSION['username'];*/
     <link rel="stylesheet" href="../css/dashboard.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
+    <?php Require "nav\nav.php";?>
     <div class="header">
         <span>Account</span>
         <a href="logout.php">Logout</a>
     </div>
 
-<!--<div class="container">
+    <div class="container">
         <div class="welcome-message">
             Welcome, <?php echo htmlspecialchars($username); ?>!
-        </div>-->
+        </div>
 
         <div class="dashboard-options">
             <a href="upload.php">Upload a File</a>
