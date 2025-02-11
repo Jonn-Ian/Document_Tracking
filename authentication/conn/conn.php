@@ -2,14 +2,15 @@
 
 $servername = "localhost";
 $username = "root";
-$serverpassword = "";
+$ServerPassword = "";
 $db_name = "docu_tracker";
 
+$conn = new mysqli($servername, $username, $ServerPassword, $db_name);
 
-$conn = new mysqli($servername, $serverpassword, $db_name, $username);;
-
-if (!$conn) {
-    die('Failed to connect to MySQL: ' . mysqli_connect_error());
+if ($conn->connect_error) {
+    die('Failed to connect to MySQL: ' . $conn->connect_error);
 }
 
 date_default_timezone_set('Asia/Manila');
+
+?>
