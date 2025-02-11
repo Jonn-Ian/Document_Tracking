@@ -57,7 +57,7 @@ function verify_login(){
     if (!isset($_SESSION["username"])) {
 
         // Redirect to login page if the user is not logged in
-        header("location: ../login.php");
+        header("location: ../../templates/login.php");
         exit();
     }
 }
