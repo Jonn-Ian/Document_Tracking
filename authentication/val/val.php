@@ -1,5 +1,7 @@
 <?php
 require_once "../conn/conn.php";
+session_start();
+
 
 //for sanitizing the input of the user
 function sanitize($conn, $username, $password){
