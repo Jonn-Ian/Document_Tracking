@@ -1,4 +1,7 @@
+<?
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
     <link rel="stylesheet" href="../css/dashboard.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
-    <?php Require "nav\nav.php";?>
+    
     <div class="header">
         <span>Account</span>
         <a href="logout.php">Logout</a>
