@@ -32,7 +32,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document KUNASD POASD</title>
 </head>
 <body>
     <form action="../authentication/val/val.php" method="post">
