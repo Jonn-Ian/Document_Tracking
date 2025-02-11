@@ -8,6 +8,20 @@ function sanitize($conn, $username, $password){
 }
 
 function login($conn, $username, $password){
-    $query = "SELECT username, password, last_name, full_name FROM database WHERE username = '$username'";
-    $result = mysqli_query($conn, $query);
+    $sanitized = sanitize($conn, $username, $password);
+
+    if($sanitized){
+        $query = "SELECT username, password, last_name, full_name FROM database WHERE username = '$username'";
+        $result = mysqli_query($conn, $query);
+
+        if(mysqli_num_rows($result) > 0){
+            header("location: dashboard.php");
+        }
+        else{
+            echo"Invalid Account";
+        }
+    }
+    else{
+        return false;
+    }
 }
