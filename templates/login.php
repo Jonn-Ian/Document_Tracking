@@ -1,6 +1,6 @@
 <?php
 require_once '../auth/val/LoginVerifier.php';
-var_dump($_SESSION);
+
 
 ?>
 <!DOCTYPE html>
