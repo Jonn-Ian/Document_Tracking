@@ -5,27 +5,47 @@ body {
     padding: 0;
 }
 
+/* Header Styles */
 .header {
     background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+    padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align contents to the right */
     align-items: center;
 }
 
-.header a {
+/* Button Styles */
+.header-right {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.btn {
     color: #fff;
     text-decoration: none;
-    padding: 5px 10px;
-    background-color: #28a745;
-    border-radius: 4px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
 }
 
-.header a:hover {
-    background-color: #218838;
+.btn:hover {
+    background-color: #0056b3;
 }
 
+.logout {
+    background-color: #dc3545;
+}
+
+.logout:hover {
+    background-color: #c82333;
+}
+
+/* Main Content */
 .container {
     padding: 20px;
     text-align: center;
@@ -56,4 +76,9 @@ body {
 
 .dashboard-options a:hover {
     background-color: #f0f0f0;
+}
+
+/* Icons */
+.btn i {
+    font-size: 18px; /* Adjust icon size */
 }
