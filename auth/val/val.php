@@ -50,13 +50,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
     login($CONN, $username, $password);
 }
-
-// Validate if the user is still logged in
-function verify_login(){
-    if (!isset($_SESSION["username"])) {
-        // Redirect to login page if the user is not logged in
-        header("location: ../../templates/login.php");
-        exit();
-    }
-}
-?>

@@ -2,8 +2,8 @@
 // Start session if not already started
 session_start();
 
-// Assuming username is stored in session
-$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
+//username is stored in session
+$User_Name = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
 
     <div class="container">
         <div class="welcome-message">
-            Welcome, <?php echo htmlspecialchars($username); ?>!
+            Welcome, <?php echo htmlspecialchars($User_Name); ?>!
         </div>
 
         <div class="dashboard-options">
