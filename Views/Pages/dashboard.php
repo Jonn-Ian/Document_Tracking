@@ -2,8 +2,8 @@
 // Start session if not already started
 session_start();
 
-//username is stored in session
-$User_Name = $_SESSION['username'];
+// Assuming username is stored in session
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
 ?>
 
 <!DOCTYPE html>
@@ -12,15 +12,17 @@ $User_Name = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/dashboard.css"> 
+    <link rel="stylesheet" href="../../css/dashboard.css"> <!-- Link to the external CSS file -->
+    <!-- Include Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     
+    <!-- Header Section -->
     <div class="header">
         <div class="header-right">
             <a href="employee_account.php" class="btn">
-                <i class="fas fa-tachometer-alt"></i> 
+                <i class = "fas fa-tachometer-alt"></i> 
                 Account
             </a>
             <a href="logout.php" class="btn logout">
@@ -32,7 +34,7 @@ $User_Name = $_SESSION['username'];
 
     <div class="container">
         <div class="welcome-message">
-            Welcome, <?php echo htmlspecialchars($User_Name); ?>!
+            Welcome, <?php echo htmlspecialchars($username); ?>!
         </div>
 
         <div class="dashboard-options">
@@ -40,5 +42,6 @@ $User_Name = $_SESSION['username'];
             <a href="search.php">Search/Track a File</a>
         </div>
     </div>
+    
 </body>
 </html>

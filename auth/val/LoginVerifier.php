@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
-    header('Location: ../templates/dashboard.php');
+    header('Location: ../Views/Pages/dashboard.php');
     exit();
 }
 
