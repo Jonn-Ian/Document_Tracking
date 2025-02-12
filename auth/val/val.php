@@ -14,26 +14,28 @@ function login($conn, $username, $password){
     $sanitized = sanitize($conn, $username, $password);
 
     if($sanitized){
-        $query = "SELECT id, username, password, last_name, full_name FROM accounts WHERE username = '$username'";
+        // Adjust the column names to match your database schema
+        $query = "SELECT id, username, password, last_name FROM accounts WHERE username = '$username'";
         $result = mysqli_query($conn, $query);
 
         // Find the user's account
         if(mysqli_num_rows($result) > 0){
-            // Fetch the data of the user and put it into the $row variable
+            // This fetches the data of the user and puts it into the $row variable
             $row = mysqli_fetch_assoc($result);
 
             // Verify the password
-            if (password_verify($password, $row['password'])) {
-                // Embed the session to the logged-in user to track the user
+            if ($row['password'] && $row['username'] == sanitize($conn, $password, $username)) {
+                // Embed the session to the logged-in user so it tracks the user
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
-                $_SESSION['full_name'] = $row['full_name'];
+                $_SESSION['last_name'] = $row['last_name'];
 
                 // Redirect the user to the dashboard after logging in
                 header("location: ../templates/dashboard.php");
                 exit();
-            } else {
-                echo "Invalid Account";
+            } 
+            else {
+                echo "first Invalid Account";
             }
         } else {
             echo "Invalid Account";
