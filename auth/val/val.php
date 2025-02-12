@@ -31,7 +31,7 @@ function login($conn, $username, $password){
                 $_SESSION['last_name'] = $row['last_name'];
 
                 // Redirect the user to the dashboard after logging in
-                header("location: ../templates/dashboard.php");
+                header("location: ../../templates/dashboard.php");
                 exit();
             } 
             else {
