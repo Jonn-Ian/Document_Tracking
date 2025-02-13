@@ -3,7 +3,13 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
+
 
 
 .btn {
@@ -33,9 +39,16 @@ body {
 
 /* Main Content */
 .container {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    height: 100vh;
+    width: calc(100% - 250px); /* Adjust width based on your sidebar width */
+    margin-left: 250px; /* Same as sidebar width */
 }
+
 
 .welcome-message {
     font-size: 24px;
@@ -63,6 +76,7 @@ body {
 .dashboard-options a:hover {
     background-color: #f0f0f0;
 }
+
 
 /* Icons */
 .btn i {
