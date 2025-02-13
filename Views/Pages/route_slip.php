@@ -125,16 +125,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-3">
+                <div class="row mt-4">
                 <div class="col-md-12">
                     <label for="remarks" class="form-label">Remarks</label>
-                    <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
+                    <textarea class="form-control" id="remarks" name="remarks" rows="3" placeholder="Enter your remarks here..."></textarea>
+                    </div>
                 </div>
-            </div>
-                <button type="submit" class="btn btn-primary w-100">Submit</button>
-            </div>
-            </div>
-            
+
+                <div class="row mt-4">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
         </form>
     </div>
 </body>
