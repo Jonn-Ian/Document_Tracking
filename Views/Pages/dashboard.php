@@ -1,11 +1,3 @@
-<?php
-// Start session if not already started
-session_start();
-
-// Assuming username is stored in session
-$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +21,6 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
         <div class="dashboard-options">
             <a href="upload.php">Upload a File</a>
             <a href="search.php">Search/Track a File</a>
-            <?php var_dump($_SESSION);?>
         </div>
     </div>
 </body>

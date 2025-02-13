@@ -5,6 +5,9 @@ if (!$_SESSION) {
     header('Location: ../../login.php');
     exit();
 }
+
+// Assuming username is stored in session
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User'
 ?>
 <!DOCTYPE html>
 <html>
