@@ -20,7 +20,6 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
 <?php 
     require ("../Layout/nav.php")
     ?>
-
     <div class="container">
         <div class="welcome-message">
             Welcome, <?php echo htmlspecialchars($username); 
@@ -33,6 +32,5 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
             <?php var_dump($_SESSION);?>
         </div>
     </div>
-    
 </body>
 </html>
