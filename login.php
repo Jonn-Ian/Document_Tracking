@@ -1,7 +1,6 @@
 <?php
 require_once './auth/val/LoginVerifier.php';
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +17,7 @@ require_once './auth/val/LoginVerifier.php';
             <input type="text" id="username" name="username" placeholder="Username" required><br>
             <input type="password" id="password" name="password" placeholder="Password" required><br>
             <input type="submit" name="submit" value="Login">
+            <?php var_dump($_SESSION); ?>
         </form>
     </div>
 </body>

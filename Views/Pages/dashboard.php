@@ -23,12 +23,14 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
 
     <div class="container">
         <div class="welcome-message">
-            Welcome, <?php echo htmlspecialchars($username); ?>!
+            Welcome, <?php echo htmlspecialchars($username); 
+            ?>!
         </div>
 
         <div class="dashboard-options">
             <a href="upload.php">Upload a File</a>
             <a href="search.php">Search/Track a File</a>
+            <?php var_dump($_SESSION);?>
         </div>
     </div>
     

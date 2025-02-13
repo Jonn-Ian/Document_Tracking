@@ -1,4 +1,11 @@
+<?php 
+session_start();
 
+if (!$_SESSION) {
+    header('Location: ../../login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +34,7 @@
                 <li id="employeeaccount"><a href="../../Views/Pages/employee_account.php"><i class="fas fa-tachometer-alt"></i> Account</a></li>
                 <li><a href="#"><i class="fas fa-inbox"></i> Received</a></li>
                 <li><a href="#"><i class="fas fa-archive"></i> Archive</a></li>
-                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="../../auth/val/LogOut.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </nav>
     </div>
