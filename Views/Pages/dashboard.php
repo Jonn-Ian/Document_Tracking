@@ -17,20 +17,9 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'User';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    
-    <!-- Header Section -->
-    <div class="header">
-        <div class="header-right">
-            <a href="employee_account.php" class="btn">
-                <i class = "fas fa-tachometer-alt"></i> 
-                Account
-            </a>
-            <a href="logout.php" class="btn logout">
-                <i class="fas fa-sign-out-alt"></i> 
-                Logout
-            </a>
-        </div>
-    </div>
+<?php 
+    require ("../Layout/nav.php")
+    ?>
 
     <div class="container">
         <div class="welcome-message">
